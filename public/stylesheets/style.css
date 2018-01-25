@@ -1,0 +1,36 @@
+@import url(base.css);
+body {
+  font: 14px "Open Sans", sans-serif;
+  padding: 10px 20px; }
+
+#root {
+  text-align: center;
+  padding: 20px; }
+
+.error {
+  color: #AB0000;
+  font-weight: bold; }
+
+.dataItem {
+  display: block; }
+
+#temp, #userLocation {
+  font-size: 300%; }
+
+#twoH, #rh, #uvIndex {
+  font-size: 120%; }
+
+#selectLocation {
+  margin: auto;
+  display: block; }
+
+#footer {
+  text-align: center;
+  margin-top: 200px;
+  border-top: 1px solid #DEDEDE; }
+
+#title {
+  display: inline;
+  font-size: 100%; }
+
+/*# sourceMappingURL=style.css.map */
