@@ -5,11 +5,20 @@ $lightBlue: #82B7FF;
 $midBlue: #4C73A8;
 $blue: #2C4770;
 $darkBlue: #132238;
+$lightGray: #EFEFEF;
 $gray: #DEDEDE;
+$darkGray: #999999;
 
 body {
     font: 14px "Open Sans", sans-serif;
     padding: 10px 20px;
+}
+
+.monospace {
+    font-family: monospace;
+    border: 1px solid $gray;
+    padding: 2px;
+    background: $lightGray;
 }
 
 #root {

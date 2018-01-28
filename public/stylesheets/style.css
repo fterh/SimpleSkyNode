@@ -3,6 +3,12 @@ body {
   font: 14px "Open Sans", sans-serif;
   padding: 10px 20px; }
 
+.monospace {
+  font-family: monospace;
+  border: 1px solid #DEDEDE;
+  padding: 2px;
+  background: #EFEFEF; }
+
 #root {
   text-align: center;
   padding: 20px; }
