@@ -1,23 +1,4 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title><%= title %></title>
-
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <link rel="stylesheet" href="/stylesheets/style.css" />
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
-
-        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.4/lodash.min.js"></script>
-        <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
-        <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
-        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-        <script type="text/babel" src="/javascripts/ui.js"></script>
-        <script src="/javascripts/location.js"></script>
-        <!-- Google analytics tracking code -->
-    </head>
+<% include partials/head %>
 
     <body onload="getLocation()">
         <div id="root" class="w-container" onload="initialize()">
@@ -28,14 +9,6 @@
             <%- locationList %>
         </select>
 
-        <footer id="footer" class="section">
-            <div>
-                <h1 id="title"><%= title %></h1>
-                <p>
-                    Project by Fabian Terh.
-                    Powered by: nodejs, Express, React, and more.
-                </p>
-            </div>
-        </footer>
+        <% include partials/footer %>
     </body>
 </html>
