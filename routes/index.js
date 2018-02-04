@@ -13,6 +13,7 @@ fs.readFile('locationList.json', (err, data) => {
 router.get('/', function(req, res, next) {
     res.render('index', {
         title: 'Thunderbird: live Singapore weather',
+        shortTitle: 'Thunderbird',
         locationList: locationList.locationList
     });
 });

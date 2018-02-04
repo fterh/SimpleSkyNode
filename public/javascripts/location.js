@@ -59,13 +59,13 @@ function postLocation(position, userSelect) {
     }
 
     axios.post(url, coordinates).then((response) => {
-        var rh = ['rh', `humidity: ${response.data.rh.value} %`];
-        var temp = ['temp', response.data.temp.value + '\u00B0C'];
+        var rh = ['rh', `humidity: ${response.data.rh.value} %`, true, 'fas fa-tint'];
+        var temp = ['temp', response.data.temp.value + '\u00B0C', true, 'fas fa-thermometer-half'];
         var twentyfour
-        var twoH = ['twoH', response.data.twoH.forecast];
-        var userLocation = ['userLocation', response.data.twoH.area];
-        var uvIndex = ['uvIndex', `UV index: ${response.data.uvIndex.value}`];
+        var twoH = ['twoH', response.data.twoH.forecast, true, 'fas fa-cloud'];
+        var userLocation = ['userLocation', response.data.twoH.area, true, 'fas fa-location-arrow'];
+        var uvIndex = ['uvIndex', `UV index: ${response.data.uvIndex.value}`, true, 'fas fa-sun'];
 
-        updateUI([temp, twoH, userLocation, rh, uvIndex]);
+        updateUI([temp, twoH, rh, uvIndex, userLocation]);
     });
 }

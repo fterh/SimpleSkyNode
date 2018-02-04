@@ -1,17 +1,17 @@
 @import "base.css";
 
 $red: #AB0000;
-$lightBlue: #82B7FF;
-$midBlue: #4C73A8;
-$blue: #2C4770;
-$darkBlue: #132238;
+$blue: #7BB9F4;
+$darkBlue: #4B8BC9;
+$darkerBlue: #2B3946;
 $lightGray: #EFEFEF;
 $gray: #DEDEDE;
-$darkGray: #999999;
+$darkGray: #696969;
+$white: #ffffff;
 
 body {
     font: 14px "Open Sans", sans-serif;
-    padding: 10px 20px;
+    background: $blue;
 }
 
 .monospace {
@@ -21,9 +21,22 @@ body {
     background: $lightGray;
 }
 
+#title {
+    color: $darkerBlue;
+    font-family: "Patua One", sans-serif;
+    text-align: center;
+}
+
 #root {
     text-align: center;
     padding: 20px;
+    width: 400px;
+}
+
+@media screen and (max-width: 450px) {
+    #root {
+        width: 90%;
+    }
 }
 
 .error {
@@ -32,15 +45,18 @@ body {
 }
 
 .dataItem {
+    color: $blue;
+    font-size: 150%;
+    padding: 10px;
     display: block;
+    background: $darkBlue;
 }
 
-#temp, #userLocation {
+#temp {
+    color: $darkerBlue;
     font-size: 300%;
-}
+    background: none;
 
-#twoH, #rh, #uvIndex {
-    font-size: 120%;
 }
 
 #selectLocation {
@@ -49,12 +65,16 @@ body {
 }
 
 #footer {
+    color: $white;
     text-align: center;
-    margin-top: 200px;
-    border-top: 1px solid $gray;
+    padding: 10px 20px;
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
+    background: $darkBlue;
 }
 
-#title {
+#footer-title {
     display: inline;
     font-size: 100%;
 }
