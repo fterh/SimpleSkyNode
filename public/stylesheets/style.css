@@ -1,7 +1,6 @@
 @import url(base.css);
 body {
-  font: 14px "Open Sans", sans-serif;
-  background: #7BB9F4; }
+  font: 14px "Open Sans", sans-serif; }
 
 .monospace {
   font-family: monospace;
@@ -9,10 +8,25 @@ body {
   padding: 2px;
   background: #EFEFEF; }
 
-#title {
-  color: #2B3946;
-  font-family: "Patua One", sans-serif;
-  text-align: center; }
+.hidden {
+  visibility: hidden; }
+
+.show {
+  visibility: visible; }
+
+.block {
+  display: block; }
+
+.inline {
+  margin: 0 10px;
+  display: inline; }
+
+.error {
+  color: #AB0000;
+  font-weight: bold; }
+
+#loading {
+  margin: 50% auto; }
 
 #root {
   text-align: center;
@@ -23,34 +37,36 @@ body {
   #root {
     width: 90%; } }
 
-.error {
-  color: #AB0000;
-  font-weight: bold; }
+#block-2 {
+  border-width: 1px 0;
+  border-style: solid;
+  border-color: #696969;
+  margin: 10px 0;
+  padding: 10px 0; }
 
 .dataItem {
-  color: #7BB9F4;
-  font-size: 150%;
-  padding: 10px;
-  display: block;
-  background: #4B8BC9; }
+  font-size: 110%;
+  font-weight: 400; }
 
 #temp {
   color: #2B3946;
   font-size: 300%;
-  background: none; }
+  font-weight: 600; }
+
+#twoH {
+  font-size: 150%; }
 
 #selectLocation {
   margin: auto;
   display: block; }
 
 #footer {
-  color: #ffffff;
   text-align: center;
-  padding: 10px 20px;
   width: 100%;
+  padding: 10px 20px;
   position: fixed;
   bottom: 0px;
-  background: #4B8BC9; }
+  border-top: 1px solid #696969; }
 
 #footer-title {
   display: inline;

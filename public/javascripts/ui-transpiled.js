@@ -1,20 +1,39 @@
 const root = document.getElementById('root');
 
+class InitialStructure extends React.Component {
+    render() {
+        return React.createElement(
+            "div",
+            null,
+            React.createElement("div", { id: "block-1" }),
+            React.createElement("div", { id: "block-2" }),
+            React.createElement("div", { id: "block-3" }),
+            React.createElement("div", { id: "block-4" })
+        );
+    }
+}
+
 class DataItem extends React.Component {
     constructor(props) {
         super(props);
     }
 
     render() {
-        if (this.props.hasIcon) {
-            var icon = React.createElement("i", { "class": this.props.iconClass });
+        if (this.props.iconClass) {
+            var icon = React.createElement("i", { className: this.props.iconClass });
         } else {
-            var icon = "";
+            var icon = '';
+        }
+
+        if (this.props.customClass) {
+            var customClass = this.props.customClass;
+        } else {
+            var customClass = '';
         }
 
         return React.createElement(
             "span",
-            { id: this.props.id, className: "dataItem" },
+            { id: this.props.id, className: "dataItem " + this.props.customClass },
             icon,
             "\xA0",
             this.props.value
@@ -22,9 +41,30 @@ class DataItem extends React.Component {
     }
 }
 
+function initializeStructure() {
+    ReactDOM.render(React.createElement(InitialStructure, null), root);
+}
+
 function updateUI(data) {
-    var renderData = data.map(i => React.createElement(DataItem, { id: i[0], value: i[1], hasIcon: i[2], iconClass: i[3] }));
-    ReactDOM.render(renderData, root);
+    if (typeof data == 'object') {
+        renderData = {};
+        data.forEach(item => {
+            var renderTo = item['renderTo'];
+            if (!renderData[renderTo]) {
+                renderData[renderTo] = [];
+            }
+
+            renderData[renderTo].push(React.createElement(DataItem, { id: item['name'],
+                value: item['value'],
+                iconClass: item['iconClass'],
+                customClass: item['customClass']
+            }));
+        });
+
+        Object.keys(renderData).forEach(blockID => {
+            ReactDOM.render(renderData[blockID], document.getElementById(blockID));
+        });
+    }
 }
 
 function errorMessage(className, message) {

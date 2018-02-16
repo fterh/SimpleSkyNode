@@ -11,7 +11,6 @@ $white: #ffffff;
 
 body {
     font: 14px "Open Sans", sans-serif;
-    background: $blue;
 }
 
 .monospace {
@@ -21,10 +20,30 @@ body {
     background: $lightGray;
 }
 
-#title {
-    color: $darkerBlue;
-    font-family: "Patua One", sans-serif;
-    text-align: center;
+.hidden {
+    visibility: hidden;
+}
+
+.show {
+    visibility: visible;
+}
+
+.block {
+    display: block;
+}
+
+.inline {
+    margin: 0 10px;
+    display: inline;
+}
+
+.error {
+    color: $red;
+    font-weight: bold;
+}
+
+#loading {
+    margin: 50% auto;
 }
 
 #root {
@@ -39,24 +58,27 @@ body {
     }
 }
 
-.error {
-    color: $red;
-    font-weight: bold;
+#block-2 {
+    border-width: 1px 0;
+    border-style: solid;
+    border-color: $darkGray;
+    margin: 10px 0;
+    padding: 10px 0;
 }
 
 .dataItem {
-    color: $blue;
-    font-size: 150%;
-    padding: 10px;
-    display: block;
-    background: $darkBlue;
+    font-size: 110%;
+    font-weight: 400;
 }
 
 #temp {
     color: $darkerBlue;
     font-size: 300%;
-    background: none;
+    font-weight: 600;
+}
 
+#twoH {
+    font-size: 150%;
 }
 
 #selectLocation {
@@ -65,13 +87,12 @@ body {
 }
 
 #footer {
-    color: $white;
     text-align: center;
-    padding: 10px 20px;
     width: 100%;
+    padding: 10px 20px;
     position: fixed;
     bottom: 0px;
-    background: $darkBlue;
+    border-top: 1px solid $darkGray;
 }
 
 #footer-title {

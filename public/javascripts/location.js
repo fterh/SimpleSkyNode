@@ -5,37 +5,34 @@ function getLocation() {
     } else {
         errorMessage('error', 'Error: your browser does not support geolocation :( \
             <br /> Please select it manually.');
-        //alert('Geolocation is not supported by this browser; please select location manually');
     }
+}
+
+// loads page, unhides hidden page elements
+function loadPage() {
+    var toUnhide = ['selectLocation', 'footer'];
+    toUnhide.forEach((element) => {
+        document.getElementById(element).classList.add('show');
+        document.getElementById(element).classList.remove('hidden');
+    });
 }
 
 // error handling
 function handleError(error) {
     errorMessage('error', 'Error: I can\'t get your location :( <br />\
         Please select it manually.');
-    // switch (error.code) {
-    //     case error.PERMISSION_DENIED:
-    //         alert('Unable to get your location (permission denied); please select location manually');
-    //         break;
-    //     case error.POSITION_UNAVAILABLE:
-    //         alert('Unable to get your location (position unavailable); please select location manually');
-    //         break;
-    //     case error.TIMEOUT:
-    //         alert('Unable to get your location (timeout); please select location manually');
-    //         break;
-    //     case error.UNKNOWN_ERROR:
-    //         alert('Unknown error; please select location manually');
-    // }
+    loadPage();
 }
 
 // location acquired
 function locationAcquired(position) {
+    // unhides page elements
+    loadPage();
     postLocation(position, false);
 }
 
 // user selects location
 function selectLocation(object) {
-    // updateUI('userLocation', object.value);
     var position = {
         lat: object.options[object.selectedIndex].dataset.lat,
         lng: object.options[object.selectedIndex].dataset.lng
@@ -59,13 +56,41 @@ function postLocation(position, userSelect) {
     }
 
     axios.post(url, coordinates).then((response) => {
-        var rh = ['rh', `humidity: ${response.data.rh.value} %`, true, 'fas fa-tint'];
-        var temp = ['temp', response.data.temp.value + '\u00B0C', true, 'fas fa-thermometer-half'];
-        var twentyfour
-        var twoH = ['twoH', response.data.twoH.forecast, true, 'fas fa-cloud'];
-        var userLocation = ['userLocation', response.data.twoH.area, true, 'fas fa-location-arrow'];
-        var uvIndex = ['uvIndex', `UV index: ${response.data.uvIndex.value}`, true, 'fas fa-sun'];
-
+        var rh = {
+            name: 'rh',
+            value: `humidity: ${response.data.rh.value}%`,
+            iconClass: 'fas fa-tint',
+            customClass: 'inline',
+            renderTo: 'block-2'
+        }
+        var temp = {
+            name: 'temp',
+            value: `${response.data.temp.value}\u00B0C`,
+            customClass: 'block',
+            renderTo: 'block-1'
+        }
+        var twentyfour = {}
+        var twoH = {
+            name: 'twoH',
+            value: response.data.twoH.forecast,
+            customClass: 'block',
+            renderTo: 'block-1'
+        }
+        var userLocation = {
+            name: 'userLocation',
+            value: response.data.twoH.area,
+            iconClass: 'fas fa-location-arrow',
+            customClass: 'block',
+            renderTo: 'block-4'
+        }
+        var uvIndex = {
+            name: 'uvIndex',
+            value: `UV index: ${response.data.uvIndex.value}`,
+            iconClass: 'fas fa-sun',
+            customClass: 'inline',
+            renderTo: 'block-2'
+        }
+        initializeStructure();
         updateUI([temp, twoH, rh, uvIndex, userLocation]);
     });
 }
