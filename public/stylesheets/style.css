@@ -56,7 +56,7 @@ body {
 #twoH {
   font-size: 150%; }
 
-#location {
+#location, #utilities {
   text-align: center; }
 
 #userLocationWrapper {

@@ -17,6 +17,12 @@ function loadPage() {
     });
 }
 
+// show footer if page is /data-status
+if (window.location.pathname == '/data-status') {
+    document.getElementById('footer').classList.add('show');
+    document.getElementById('footer').classList.remove('hidden');
+}
+
 // error handling
 function handleError(error) {
     errorMessage('error', 'Error: I can\'t get your location :( <br />\
@@ -89,7 +95,11 @@ function postLocation(position, userSelect) {
             customClass: 'inline',
             renderTo: 'block-2'
         }
-        initializeStructure();
+        // checks if initializeStructure has been called using #block-1
+        if (!document.getElementById('block-1')) {
+            initializeStructure();
+        }
         updateUI([temp, twoH, rh, uvIndex, userLocation]);
+        sessionRemember([temp, twoH, rh, uvIndex, userLocation]);
     });
 }
