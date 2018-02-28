@@ -1,12 +1,14 @@
 <% include partials/head %>
 
     <body>
-        <h2>Data freshness:</h2>
+        <div id="root" class="w-container">
+            <h2>Data freshness:</h2>
 
-        <p>Temperature: <span class="monospace"><%= data.temp.items[0].timestamp %></span></p>
-        <p>2-hour nowcast: <span class="monospace"><%= data.twoH.items[0].update_timestamp %></span></p>
-        <p>Humidity: <span class="monospace"><%= data.rh.items[0].timestamp %></span></p>
-        <p>UV index: <span class="monospace"><%= data.uvIndex.items[0].update_timestamp %></span></p>
+            <p>Temperature: <span class="monospace"><%= data.temp.items[0].timestamp %></span></p>
+            <p>2-hour nowcast: <span class="monospace"><%= data.twoH.items[0].update_timestamp %></span></p>
+            <p>Humidity: <span class="monospace"><%= data.rh.items[0].timestamp %></span></p>
+            <p>UV index: <span class="monospace"><%= data.uvIndex.items[0].update_timestamp %></span></p>
+        </div>
 
         <% include partials/footer %>
     </body>
