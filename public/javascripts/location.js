@@ -80,8 +80,7 @@ function postLocation(position, userSelect) {
             name: 'userLocation',
             value: response.data.twoH.area,
             iconClass: 'fas fa-location-arrow',
-            customClass: 'block',
-            renderTo: 'block-4'
+            renderTo: 'userLocationWrapper'
         }
         var uvIndex = {
             name: 'uvIndex',

@@ -5,9 +5,12 @@
             <img id="loading" src="/images/spinner.svg" alt="Loading" />
         </div>
 
-        <select id="selectLocation" class="hidden" onchange="selectLocation(this)">
-            <%- locationList %>
-        </select>
+        <div id="location">
+            <div id="userLocationWrapper"></div>
+            <select id="selectLocation" class="hidden" onchange="selectLocation(this)">
+                <%- locationList %>
+            </select>
+        </div>
 
         <% include partials/footer %>
     </body>

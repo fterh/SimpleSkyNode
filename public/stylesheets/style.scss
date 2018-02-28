@@ -81,9 +81,16 @@ body {
     font-size: 150%;
 }
 
+#location {
+    text-align: center;
+}
+
+#userLocationWrapper {
+    display: inline;
+}
+
 #selectLocation {
     margin: auto;
-    display: block;
 }
 
 #footer {
