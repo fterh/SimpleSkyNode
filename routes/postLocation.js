@@ -29,9 +29,6 @@ var calculateDistances = (userLocation) => {
         thunderbird.temp.metadata.stations[key]['distFromUser'] = calculateDistance(userLocation, value.location);
     });
 
-    // twentyfourH coming soon
-    // _.forEach(thunderbird.twentyfourH.items[0])
-
     // twoH
     _.forEach(thunderbird.twoH.area_metadata, (value, key) => {
         thunderbird.twoH.area_metadata[key]['distFromUser'] = calculateDistance(userLocation, value.label_location);

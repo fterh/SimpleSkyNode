@@ -9,6 +9,11 @@ $gray: #DEDEDE;
 $darkGray: #696969;
 $white: #ffffff;
 
+@mixin centered-content {
+    text-align: center;
+    width: 400px;
+}
+
 body {
     font: 14px "Open Sans", sans-serif;
 }
@@ -46,10 +51,9 @@ body {
     margin: 50% auto;
 }
 
-#root {
-    text-align: center;
-    padding: 20px;
-    width: 400px;
+#root, #outlook {
+    padding: 0 20px;
+    @include centered-content
 }
 
 @media screen and (max-width: 450px) {
@@ -79,6 +83,20 @@ body {
 
 #twoH {
     font-size: 150%;
+}
+
+#outlook {
+    .title {
+        font-size: 120%;
+        font-weight: bold;
+        display: block;
+    }
+
+    .dataItem {
+        .dataItemLine {
+            display: block;
+        }
+    }
 }
 
 #location, #utilities {

@@ -5,6 +5,18 @@
             <img id="loading" src="/images/spinner.svg" alt="Loading" />
         </div>
 
+        <div id="outlook" class="w-container">
+            <span class="title">24 hour outlook</span>
+            <span class="dataItem">
+                <span class="dataItemLine">
+                    Forecast: <%= outlookGeneralForecast %>
+                </span>
+                <span class="dataItemLine">
+                    Humidity: <%= outlookGeneralHumidityHigh %>% / <%= outlookGeneralHumidityLow %>%
+                </span>
+            </span>
+        </div>
+
         <div id="location">
             <div id="userLocationWrapper"></div>
             <select id="selectLocation" class="hidden" onchange="selectLocation(this)">

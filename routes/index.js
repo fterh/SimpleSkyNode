@@ -1,20 +1,26 @@
 const fs = require('fs');
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
-// var locationList = JSON.parse(fs.readFileSync('locationList.json'));
+var outlook = require('./../modules/outlook');
+
 var locationList;
 fs.readFile('locationList.json', (err, data) => {
     if (err) console.log(err);
     else locationList = JSON.parse(data);
 });
 
+var outlookData = outlook.outlook.items[0];
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
     res.render('index', {
         title: 'Thunderbird: live Singapore weather',
         shortTitle: 'Thunderbird',
-        locationList: locationList.locationList
+        locationList: locationList.locationList,
+        outlookGeneralForecast: outlookData.general.forecast,
+        outlookGeneralHumidityHigh: outlookData.general.relative_humidity.high,
+        outlookGeneralHumidityLow: outlookData.general.relative_humidity.low
     });
 });
 
