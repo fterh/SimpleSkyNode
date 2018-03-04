@@ -10,7 +10,7 @@ function getLocation() {
 
 // loads page, unhides hidden page elements
 function loadPage() {
-    var toUnhide = ['selectLocation', 'footer'];
+    var toUnhide = ['outlook', 'selectLocation', 'footer'];
     toUnhide.forEach((element) => {
         document.getElementById(element).classList.add('show');
         document.getElementById(element).classList.remove('hidden');

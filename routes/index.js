@@ -18,9 +18,7 @@ router.get('/', function(req, res, next) {
         title: 'Thunderbird: live Singapore weather',
         shortTitle: 'Thunderbird',
         locationList: locationList.locationList,
-        outlookGeneralForecast: outlookData.general.forecast,
-        outlookGeneralHumidityHigh: outlookData.general.relative_humidity.high,
-        outlookGeneralHumidityLow: outlookData.general.relative_humidity.low
+        outlookData
     });
 });
 

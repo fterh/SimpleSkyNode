@@ -5,14 +5,15 @@
             <img id="loading" src="/images/spinner.svg" alt="Loading" />
         </div>
 
-        <div id="outlook" class="w-container">
+        <div id="outlook" class="w-container hidden">
             <span class="title">24 hour outlook</span>
             <span class="dataItem">
                 <span class="dataItemLine">
-                    Forecast: <%= outlookGeneralForecast %>
+                    Forecast: <%= outlookData.general.forecast %>
                 </span>
                 <span class="dataItemLine">
-                    Humidity: <%= outlookGeneralHumidityHigh %>% / <%= outlookGeneralHumidityLow %>%
+                    Humidity: <%= outlookData.general.relative_humidity.high %>% /
+                        <%= outlookData.general.relative_humidity.low %>%
                 </span>
             </span>
         </div>
