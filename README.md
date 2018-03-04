@@ -2,6 +2,8 @@
 Live Singapore weather data web app, written in Javascript.
 
 ## Changelog
+### 1.2 (4 Mar 2018)
+* Aesthetic tweaks
 ### 1.1 (28 Feb 2018)
 * Implemented local storage (session storage) to store recent weather data. This loads the data instantly instead of forcing the user to wait through the splash screen, but doesn't prevent the usual AJAX calls in the background. 
 ### 1.0 (28 Feb 2018)
