@@ -2,6 +2,8 @@
 Live Singapore weather data web app, written in Javascript.
 
 ## Changelog
+### 1.4 (9 Mar 2018)
+* Added temperature and wind forecasts to 24 hour outlook
 ### 1.3 (4 Mar 2018)
 * Basic spport for 24 hour outlook (more to come!)
 ### 1.2 (4 Mar 2018)
