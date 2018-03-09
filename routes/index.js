@@ -10,7 +10,7 @@ fs.readFile('locationList.json', (err, data) => {
     else locationList = JSON.parse(data);
 });
 
-var outlookData = outlook.outlook.items[0];
+var outlookData = outlook.outlook;
 
 /* GET home page. */
 router.get('/', function(req, res, next) {

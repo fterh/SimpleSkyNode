@@ -56,13 +56,15 @@ body {
 #twoH {
   font-size: 150%; }
 
-#outlook .title {
+#outlook .type {
   font-size: 120%;
   font-weight: bold;
   display: block; }
 
-#outlook .dataItem .dataItemLine {
-  display: block; }
+#outlook #outlook-data {
+  margin: 10px auto 0 auto; }
+  #outlook #outlook-data .title {
+    font-weight: bold; }
 
 #location, #utilities {
   text-align: center;

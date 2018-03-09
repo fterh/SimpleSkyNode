@@ -6,16 +6,34 @@
         </div>
 
         <div id="outlook" class="w-container hidden">
-            <span class="title">24 hour outlook</span>
-            <span class="dataItem">
-                <span class="dataItemLine">
-                    Forecast: <%= outlookData.general.forecast %>
-                </span>
-                <span class="dataItemLine">
-                    Humidity: <%= outlookData.general.relative_humidity.high %>% /
+            <span class="type">24 hour outlook</span>
+            <table id="outlook-data">
+                <tr>
+                    <td class="title">Forecast</td>
+                    <td class="data"><%= outlookData.general.forecast %></td>
+                </tr>
+                <tr>
+                    <td class="title">Temperature</td>
+                    <td class="data">
+                        <%= outlookData.general.temperature.high %> /
+                        <%= outlookData.general.temperature.low %>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="title">Humidity</td>
+                    <td class="data">
+                        <%= outlookData.general.relative_humidity.high %>% /
                         <%= outlookData.general.relative_humidity.low %>%
-                </span>
-            </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="title">Wind</td>
+                    <td class="data">
+                        <%= outlookData.general.wind.speed.high %> /
+                        <%= outlookData.general.wind.speed.low %>
+                    </td>
+                </tr>
+            </table>
         </div>
 
         <div id="location">
